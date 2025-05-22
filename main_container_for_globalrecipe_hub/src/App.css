@@ -3,8 +3,8 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: var(--primary-bg);
-  transition: background-color var(--transition-speed) ease;
+  background: var(--gradient-primary);
+  transition: background var(--transition-speed) ease;
 }
 
 .navbar {
