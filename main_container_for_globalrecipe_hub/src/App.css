@@ -3,7 +3,9 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: var(--gradient-primary);
+  background: var(--gradient-background);
+  background-size: 300% 300%;
+  animation: gradientAnimation 20s ease infinite;
   transition: background var(--transition-speed) ease;
 }
 
