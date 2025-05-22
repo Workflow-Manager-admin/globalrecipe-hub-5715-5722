@@ -4,6 +4,8 @@ import './styles/theme.css';
 import { ThemeProvider, useTheme } from './context/ThemeContext';
 import ThemeToggle from './components/ThemeToggle';
 import GlassContainer, { GlassCard } from './components/GlassContainer';
+import RecipeCard from './components/RecipeCard';
+import sampleRecipes from './data/sampleRecipes';
 
 // Main App content wrapped with ThemeContext
 const AppContent = () => {
