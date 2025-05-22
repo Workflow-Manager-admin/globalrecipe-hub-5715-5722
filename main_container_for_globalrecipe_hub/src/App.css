@@ -1,38 +1,40 @@
-:root {
-  --kavia-orange: #E87A41;
-  --kavia-dark: #1A1A1A;
-  --text-color: #ffffff;
-  --text-secondary: rgba(255, 255, 255, 0.7);
-  --border-color: rgba(255, 255, 255, 0.1);
-}
-
-body {
-  margin: 0;
-  font-family: 'Inter', 'Roboto', 'Helvetica', 'Arial', sans-serif;
-  background-color: var(--kavia-dark);
-  color: var(--text-color);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
+/* Main container and layout styles */
 .app {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background-color: var(--primary-bg);
+  transition: background-color var(--transition-speed) ease;
 }
 
 .navbar {
-  background-color: var(--kavia-dark);
   padding: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid var(--border-color);
   position: fixed;
   top: 0;
   width: 100%;
-  box-sizing: border-box;
   z-index: 100;
+  box-sizing: border-box;
+}
+
+.navbar-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .logo {
@@ -44,19 +46,17 @@ body {
 }
 
 .logo-symbol {
-  color: var(--kavia-orange);
+  color: var(--accent-color);
 }
 
-.container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 24px;
-  width: 100%;
-  box-sizing: border-box;
+/* Hero section */
+.main-content {
+  margin-top: 80px;
+  flex: 1;
 }
 
 .hero {
-  padding-top: 120px;
+  padding-top: 60px;
   padding-bottom: 64px;
   text-align: center;
   display: flex;
@@ -66,7 +66,7 @@ body {
 }
 
 .subtitle {
-  color: var(--kavia-orange);
+  color: var(--accent-color);
   font-weight: 500;
   font-size: 1.1rem;
 }
@@ -76,6 +76,7 @@ body {
   font-weight: 600;
   line-height: 1.2;
   margin: 0;
+  color: var(--text-primary);
 }
 
 .description {
@@ -86,11 +87,12 @@ body {
   margin-bottom: 16px;
 }
 
+/* Button styles */
 .btn {
-  background-color: var(--kavia-orange);
+  background-color: var(--accent-color);
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 8px;
   padding: 10px 20px;
   font-size: 1rem;
   font-weight: 500;
@@ -99,10 +101,101 @@ body {
 }
 
 .btn:hover {
-  background-color: #FF8B4D;
+  background-color: var(--button-hover);
 }
 
 .btn-large {
   padding: 12px 24px;
   font-size: 1.1rem;
+}
+
+/* Features section */
+.features-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin: 40px 0;
+}
+
+.feature-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.feature-card h3 {
+  color: var(--accent-color);
+  margin-top: 0;
+}
+
+.feature-card p {
+  color: var(--text-secondary);
+  flex-grow: 1;
+}
+
+/* Search container */
+.search-container {
+  padding: 24px;
+  margin: 40px 0;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.search-input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--glass-bg);
+  color: var(--text-primary);
+  font-size: 1rem;
+}
+
+.search-input::placeholder {
+  color: var(--text-secondary);
+}
+
+.search-btn {
+  white-space: nowrap;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--secondary-bg);
+  padding: 20px 0;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.footer p {
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+  }
+  
+  .search-container {
+    flex-direction: column;
+  }
+  
+  .search-input, .search-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-content {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .nav-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
 }
