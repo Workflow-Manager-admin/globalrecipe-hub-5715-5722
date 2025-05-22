@@ -230,4 +230,17 @@
   .recipes-grid {
     grid-template-columns: 1fr;
   }
+  
+  .app {
+    background-size: 200% 200%;
+    animation: gradientAnimation 15s ease infinite;
+  }
+}
+
+/* Optimize gradient for larger screens */
+@media (min-width: 1440px) {
+  .app {
+    background-size: 400% 400%;
+    animation: gradientAnimation 30s ease infinite;
+  }
 }
