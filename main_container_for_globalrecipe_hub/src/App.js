@@ -65,6 +65,22 @@ const AppContent = () => {
             />
             <button className="btn search-btn">Search</button>
           </GlassContainer>
+          
+          <section>
+            <h2 className="section-title">Popular Recipes</h2>
+            <div className="recipes-grid">
+              {sampleRecipes.map(recipe => (
+                <RecipeCard
+                  key={recipe.id}
+                  image={recipe.image}
+                  name={recipe.name}
+                  description={recipe.description}
+                  cookTime={recipe.cookTime}
+                  ingredients={recipe.ingredients}
+                />
+              ))}
+            </div>
+          </section>
         </div>
       </main>
       
