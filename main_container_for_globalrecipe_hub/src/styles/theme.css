@@ -1,0 +1,90 @@
+/* Theme variables for both light and dark mode */
+:root {
+  /* Default theme variables - Light Mode */
+  --primary-bg: #f8f9fa;
+  --secondary-bg: #e9ecef;
+  --text-primary: #343a40;
+  --text-secondary: #6c757d;
+  --accent-color: #E87A41; /* Kavia orange */
+  --border-color: rgba(0, 0, 0, 0.1);
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.5);
+  --glass-shadow: rgba(0, 0, 0, 0.05);
+  --card-bg: rgba(255, 255, 255, 0.65);
+  --navbar-bg: rgba(255, 255, 255, 0.8);
+  --button-hover: #FF8B4D; /* Slightly lighter orange */
+  --backdrop-blur: blur(10px);
+  --transition-speed: 0.3s;
+}
+
+/* Dark Mode Variables */
+html[data-theme='dark'] {
+  --primary-bg: #121212;
+  --secondary-bg: #1e1e1e;
+  --text-primary: #f8f9fa;
+  --text-secondary: #adb5bd;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --glass-bg: rgba(30, 30, 30, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-shadow: rgba(0, 0, 0, 0.2);
+  --card-bg: rgba(40, 40, 40, 0.65);
+  --navbar-bg: rgba(20, 20, 20, 0.8);
+}
+
+/* Base styling for the entire app */
+body {
+  background-color: var(--primary-bg);
+  color: var(--text-primary);
+  font-family: 'Inter', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  transition: background-color var(--transition-speed) ease, 
+              color var(--transition-speed) ease;
+}
+
+/* Glass effect base styles */
+.glass-effect {
+  background: var(--glass-bg);
+  backdrop-filter: var(--backdrop-blur);
+  -webkit-backdrop-filter: var(--backdrop-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px var(--glass-shadow);
+  transition: all var(--transition-speed) ease;
+}
+
+.glass-card {
+  background: var(--card-bg);
+  backdrop-filter: var(--backdrop-blur);
+  -webkit-backdrop-filter: var(--backdrop-blur);
+  border-radius: 12px;
+  border: 1px solid var(--glass-border);
+  padding: 20px;
+  box-shadow: 0 8px 32px 0 var(--glass-shadow);
+  transition: all var(--transition-speed) ease;
+}
+
+.glass-navbar {
+  background: var(--navbar-bg);
+  backdrop-filter: var(--backdrop-blur);
+  -webkit-backdrop-filter: var(--backdrop-blur);
+  border-bottom: 1px solid var(--glass-border);
+  box-shadow: 0 4px 30px var(--glass-shadow);
+  transition: all var(--transition-speed) ease;
+}
+
+/* Helper utility classes */
+.text-accent {
+  color: var(--accent-color);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+/* Smooth transitions for theme changes */
+* {
+  transition-property: background-color, border-color, color, box-shadow;
+  transition-duration: var(--transition-speed);
+  transition-timing-function: ease;
+}
