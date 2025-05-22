@@ -53,5 +53,6 @@
 }
 
 .theme-toggle:hover .toggle-thumb {
-  background-color: var(--button-hover);
+  background: var(--button-hover);
+  box-shadow: 0 0 8px rgba(230, 126, 34, 0.5);
 }
