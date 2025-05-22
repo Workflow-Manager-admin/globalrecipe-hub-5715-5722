@@ -28,7 +28,7 @@
 .toggle-thumb {
   height: 24px;
   width: 24px;
-  background-color: var(--accent-color);
+  background: var(--gradient-accent);
   border-radius: 50%;
   transition: transform 0.3s ease;
   display: flex;
